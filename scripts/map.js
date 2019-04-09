@@ -66,7 +66,7 @@ $(window).on('load', function() {
    * Given a collection of points, determines the layers based on 'Group'
    * column in the spreadsheet.
    */
-  /*
+  
   function determineLayers(points) {
     var layerNamesFromSpreadsheet = [];
     var layers = {};
@@ -94,41 +94,8 @@ $(window).on('load', function() {
     }
     return layers;
   }
-*/
-    /**
-   * Given a collection of points, determines the layers based on 'Group'
-   * column in the spreadsheet.
-   */
-  function determineLayers(points) {
-    var layerNamesFromSpreadsheet = [];
-    var layers = {};
-   
-    for (var i in points) {
-      var pointLayerNameFromSpreadsheet = points[i].Women;
-      if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
-        markerColors.push(
-          points[i]['Marker Icon'].indexOf('.') > 0
-          ? points[i]['Marker Icon']
-          : points[i]['Marker Color']
-        );
-        layerNamesFromSpreadsheet.push(pointLayerNameFromSpreadsheet);
-      }
-    }
-    // if none of the points have named layers or if there was only one name, return no layers
-    if (layerNamesFromSpreadsheet.length === 1) {
-      layers = undefined;
-    } else {
-      for (var i in layerNamesFromSpreadsheet) {
-        var layerNameFromSpreadsheet = layerNamesFromSpreadsheet[i];
-        layers[layerNameFromSpreadsheet] = L.layerGroup();
-        layers[layerNameFromSpreadsheet].addTo(map);
-      }
-    }
-    return layers;
-  }
 
-  
-  
+
   
   /**
    * Assigns points to appropriate layers and clusters them if needed
