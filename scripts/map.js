@@ -126,7 +126,7 @@ $(window).on('load', function() {
 
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
-          .bindPopup("<b>" +'Name of the Mine Claim :  '+ point['Name'] + '</b><br>' +
+          .bindPopup("<b>" +'Name of the Mine Claim :  '+ point['Name'] + '</b><br>' +'<hr>' +
           (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') + '<b>Ward: </b>'+
                      point['Ward'] + '<br>' + '<b>Village: </b>' + point['Location'] +  '<br>' + '<b>Operating Status:  </b>' +
                      point['Status'] +  '<br>' + '<b>Type of Mining:  </b>' + point['Mining_Type'] + '<br>' + '<b>Is this site Registered?:  </b>' 
@@ -137,11 +137,27 @@ $(window).on('load', function() {
                     '<b> Tools used on the mine  :</b>' + point['Tools'] + '<br>' + 
                     '<b> Where do employees stay  :</b>' + point['Employees_Residence'] + '<br>' + 
                     '<b> Which MIneral is Mined on the site :</b>' + point['Mineral'] + '<br>' + 
-                    '<b> How much ore do you get per tonne  :</b>' + point['oer_per_tonne'] + '<br>' + 
+                    '<b> How much ore do you get per tonne  :</b>' + point['ore_per_tonne'] + '<br>' + 
                     '<b> What is the unit of measurement  :</b>' + point['unit'] + '<br>' +
                     '<b> Ore do u produce per month  :</b>' + point['ore_per_month'] + '<br>' + 
                     '<b> Selling price per unit  :</b>' + point['price_USD'] + '<br>' +
-                    '<b> Distance to Fidelity Printers :</b>' + point['Employees']);
+                    '<b> What is your selling point :</b>' + point['Selling_points'] + '<br>' +
+                     '<b> Where ore is processed :</b>' + point['Where_processing_done'] + '<br>' +
+                     '<b> Signs of Environment Impact :</b>' + point['environmental_impact'] + '<br>' +
+                     '<b> Environment Impact Descriprion :</b>' + point['describe_impact'] + '<br>' +
+                     '<b> Are there conflicts with community :</b>' + point['conflict_with_community'] + '<br>' +
+                     '<b> When did the conflict started :</b>' + point['when_conflict_started'] + '<br>' +
+                     '<b> Describe_conflict:</b>' + point['describe_conflict'] + '<br>' +
+                     '<b> Are there any incidences which resulted in injury:</b>' + point['incident'] + '<br>' +
+                     '<b> Describe the incident :</b>' + point['describe_incident'] + '<br>' +
+                     '<b> Do authorities visit the site :</b>' + point['authorities_visit'] + '<br>' +
+                     '<b> What is the visiting frequency :</b>' + point['visiting_frequency'] + '<br>' +
+                     '<b> How many Employees have safety clothing :</b>' + point['employees_protective'] + '<br>' +
+                     '<b> Which safety clothing do they have :</b>' + point['safety_clothing'] + '<br>' +
+                     '<b> Do workers buy their own safety clothing? :</b>' + point['workers_buy_safety'] + '<br>' +
+                     '<b> Is there sanitory facility :</b>' + point['Sanitory_facility'] + '<br>' +
+                     '<b> Additional Comments:</b>' + point['Comments']     
+                    );
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
