@@ -127,7 +127,7 @@ $(window).on('load', function() {
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup("<b>" +'Name of the Mine Claim :  '+ point['Name'] + '</b><br>' +'<hr>' +
-          (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') + '<b>Ward: </b>'+
+          (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +'<hr>'+ '<b>Ward: </b>'+
                      point['Ward'] + '<br>' + '<b>Village: </b>' + point['Location'] +  '<br>' + '<b>Operating Status:  </b>' +
                      point['Status'] +  '<br>' + '<b>Type of Mining:  </b>' + point['Mining_Type'] + '<br>' + '<b>Is this site Registered?:  </b>' 
                      + point['Registration_Status'] +  '<br>' + '<b>Registration Date:  </b>' + point['Registered_Date'] + '<br>' +
