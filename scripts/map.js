@@ -131,7 +131,7 @@ $(window).on('load', function() {
                      point['Ward'] + '<br>' + '<b>Village: </b>' + point['Location'] +  '<br>' + '<b>Operating Status:  </b>' +
                      point['Status'] +  '<br>' + '<b>Type of Mining:  </b>' + point['Mining_Type'] + '<br>' + '<b>Is this site Registered?:  </b>' 
                      + point['Registration_Status'] +  '<br>' + '<b>Registration Date:  </b>' + point['Registered_Date'] + '<br>' +
-                    + '<b>Distance from Highway In Minutes  :</b>' + point['Traveling_Distance'] );
+                     '<b> Distance from Highway (In Minutes)  :</b>' + point['Traveling_Distance'] );
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
