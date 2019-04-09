@@ -128,9 +128,9 @@ $(window).on('load', function() {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup("<b>" +'Name of the Mine Claim'+ point['Name'] + '</b><br>' +
           (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') + '<b>Ward: </b>'+
-                     point['Ward'] + '<br>' + '<b>Village: </b>' + point['Location'] + '<b>Operating Status:  </b>' +
-                     point['Status'] + '<b>Type of Mining:  </b>' + point['Mining_Type'] + '<b>Is this site Registered?:  </b>' 
-                     + point['Registration_Status'] + '<b>Registration Date:  </b>' + point['Registered_Date'] 
+                     point['Ward'] + '<br>' + '<b>Village: </b>' + point['Location'] +  '<br>' + '<b>Operating Status:  </b>' +
+                     point['Status'] +  '<br>' + '<b>Type of Mining:  </b>' + point['Mining_Type'] + '<br>' + '<b>Is this site Registered?:  </b>' 
+                     + point['Registration_Status'] +  '<br>' + '<b>Registration Date:  </b>' + point['Registered_Date'] + '<br>' +
                     + '<b>Distance from Highway(In Minutes)  :</b>' + point['Travelling_Distance'] );
 
         if (layers !== undefined && layers.length !== 1) {
