@@ -69,8 +69,21 @@ $(window).on('load', function() {
   function determineLayers(points) {
     var layerNamesFromSpreadsheet = [];
     var layers = {};
+   
     for (var i in points) {
       var pointLayerNameFromSpreadsheet = points[i].Group;
+      if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
+        markerColors.push(
+          points[i]['Marker Icon'].indexOf('.') > 0
+          ? points[i]['Marker Icon']
+          : points[i]['Marker Color']
+        );
+        layerNamesFromSpreadsheet.push(pointLayerNameFromSpreadsheet);
+      }
+    }
+    
+     for (var i in points) {
+      var pointLayerNameFromSpreadsheet = points[i].women;
       if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
         markerColors.push(
           points[i]['Marker Icon'].indexOf('.') > 0
