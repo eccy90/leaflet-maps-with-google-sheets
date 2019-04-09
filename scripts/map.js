@@ -131,7 +131,17 @@ $(window).on('load', function() {
                      point['Ward'] + '<br>' + '<b>Village: </b>' + point['Location'] +  '<br>' + '<b>Operating Status:  </b>' +
                      point['Status'] +  '<br>' + '<b>Type of Mining:  </b>' + point['Mining_Type'] + '<br>' + '<b>Is this site Registered?:  </b>' 
                      + point['Registration_Status'] +  '<br>' + '<b>Registration Date:  </b>' + point['Registered_Date'] + '<br>' +
-                     '<b> Distance from Highway (In Minutes)  :</b>' + point['Traveling_Distance'] );
+                     '<b> Distance from Highway (In Minutes)  :</b>' + point['Traveling_Distance'] +'br'+
+                    '<b> Number of Employees  :</b>' + point['Employees'] + 'br' + 
+                    '<b> Number of Women on the mine site  :</b>' + point['Number_of_Women'] + 'br' +
+                    '<b> Tools used on the mine  :</b>' + point['Tools'] + 'br' + 
+                    '<b> Where do employees stay  :</b>' + point['Employees_Residence'] + 'br' + 
+                    '<b> Which MIneral is Mined on the site :</b>' + point['Mineral'] + 'br' + 
+                    '<b> How much ore do you get per tonne  :</b>' + point['oer_per_tonne'] + 'br' + 
+                    '<b> What is the unit of measurement  :</b>' + point['unit'] + 'br' +
+                    '<b> Ore do u produce per month  :</b>' + point['ore_per_month'] + 'br' + 
+                    '<b> Selling price per unit  :</b>' + point['price_USD'] + 'br' +
+                    '<b> Distance to Fidelity Printers :</b>' + point['Employees']);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
