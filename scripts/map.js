@@ -66,6 +66,7 @@ $(window).on('load', function() {
    * Given a collection of points, determines the layers based on 'Group'
    * column in the spreadsheet.
    */
+  /*
   function determineLayers(points) {
     var layerNamesFromSpreadsheet = [];
     var layers = {};
@@ -93,7 +94,7 @@ $(window).on('load', function() {
     }
     return layers;
   }
-
+*/
     /**
    * Given a collection of points, determines the layers based on 'Group'
    * column in the spreadsheet.
