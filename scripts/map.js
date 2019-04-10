@@ -72,9 +72,8 @@ $(window).on('load', function() {
     var layers = {};
    
     for (var i in points) {
-      var grp = points[i].Group ;
-      var wmn = points[i].Women;
-      var pointLayerNameFromSpreadsheet = grp.concat(wmn);
+     
+      var pointLayerNameFromSpreadsheet = points[i].Women;
       if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
         markerColors.push(
           points[i]['Marker Icon'].indexOf('.') > 0
