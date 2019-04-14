@@ -96,6 +96,20 @@ $(window).on('load', function() {
       }
     }
     
+    for (var k in points) {
+     var pointLayerNameFromSpreadsheet = points[k].conflict_with_community;
+      if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
+        markerColors.push(
+          points[k]['Marker Icon'].indexOf('.') > 0
+          ? points[k]['Marker Icon']
+          : points[k]['Marker Color']
+        );
+        layerNamesFromSpreadsheet.push(pointLayerNameFromSpreadsheet);
+      }
+    }
+    
+    
+    
     // if none of the points have named layers or if there was only one name, return no layers
     if (layerNamesFromSpreadsheet.length === 1) {
       layers = undefined;
@@ -179,6 +193,7 @@ $(window).on('load', function() {
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
           marker.addTo(layers[point.Women]);
+          marker.addTo(layers[point.conflict_with_community]);
           
         }
 
