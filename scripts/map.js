@@ -70,10 +70,12 @@ $(window).on('load', function() {
   function determineLayers(points) {
     var layerNamesFromSpreadsheet = [];
     var layers = {};
-   
+    
     for (var i in points) {
-     
-      var pointLayerNameFromSpreadsheet = points[i].Women;
+     var pointLayerWomenFromSpreadsheet = points[i].Women;
+      var pointLayerGrpFromSpreadsheet = points[i].group;
+      var pointLayerArrFromSpreadsheet = pointLayerWomenFromSpreadsheet.concat(pointLayerGrpFromSpreadsheet)
+      var pointLayerNameFromSpreadsheet = pointLayerArrFromSpreadsheet;
       if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
         markerColors.push(
           points[i]['Marker Icon'].indexOf('.') > 0
