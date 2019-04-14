@@ -71,6 +71,19 @@ $(window).on('load', function() {
     var layerNamesFromSpreadsheet = [];
     var layers = {};
     
+    for (var j in points) {
+     var pointLayerNameFromSpreadsheet = points[j].Group;
+      if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
+        markerColors.push(
+          points[j]['Marker Icon'].indexOf('.') > 0
+          ? points[j]['Marker Icon']
+          : points[j]['Marker Color']
+        );
+        layerNamesFromSpreadsheet.push(pointLayerNameFromSpreadsheet);
+      }
+    }
+    
+    
     for (var i in points) {
      var pointLayerNameFromSpreadsheet = points[i].Women;
       if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
@@ -78,18 +91,6 @@ $(window).on('load', function() {
           points[i]['Marker Icon'].indexOf('.') > 0
           ? points[i]['Marker Icon']
           : points[i]['Marker Color']
-        );
-        layerNamesFromSpreadsheet.push(pointLayerNameFromSpreadsheet);
-      }
-    }
-    
-        for (var j in points) {
-     var pointLayerNameFromSpreadsheet = points[j].Group;
-      if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
-        markerColors.push(
-          points[j]['Marker Icon'].indexOf('.') > 0
-          ? points[j]['Marker Icon']
-          : points[j]['Marker Color']
         );
         layerNamesFromSpreadsheet.push(pointLayerNameFromSpreadsheet);
       }
