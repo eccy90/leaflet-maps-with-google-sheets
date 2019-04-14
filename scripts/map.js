@@ -176,8 +176,8 @@ $(window).on('load', function() {
                     );
 
         if (layers !== undefined && layers.length !== 1) {
-          marker.addTo(layers[point.Women]);
           marker.addTo(layers[point.Group]);
+          marker.addTo(layers[point.Women]);
           
         }
 
