@@ -72,10 +72,7 @@ $(window).on('load', function() {
     var layers = {};
     
     for (var i in points) {
-     var pointLayerWomenFromSpreadsheet = points[i].Women;
-      var pointLayerGrpFromSpreadsheet = points[i].group;
-      var pointLayerArrFromSpreadsheet = pointLayerWomenFromSpreadsheet.concat(pointLayerGrpFromSpreadsheet)
-      var pointLayerNameFromSpreadsheet = pointLayerArrFromSpreadsheet;
+     var pointLayerNameFromSpreadsheet = points[i].Women;
       if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
         markerColors.push(
           points[i]['Marker Icon'].indexOf('.') > 0
@@ -85,6 +82,19 @@ $(window).on('load', function() {
         layerNamesFromSpreadsheet.push(pointLayerNameFromSpreadsheet);
       }
     }
+    
+        for (var j in points) {
+     var pointLayerNameFromSpreadsheet = points[j].Group;
+      if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
+        markerColors.push(
+          points[j]['Marker Icon'].indexOf('.') > 0
+          ? points[j]['Marker Icon']
+          : points[j]['Marker Color']
+        );
+        layerNamesFromSpreadsheet.push(pointLayerNameFromSpreadsheet);
+      }
+    }
+    
     // if none of the points have named layers or if there was only one name, return no layers
     if (layerNamesFromSpreadsheet.length === 1) {
       layers = undefined;
@@ -167,6 +177,8 @@ $(window).on('load', function() {
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Women]);
+          marker.addTo(layers[point.Group]);
+          
         }
 
         markerArray.push(marker);
