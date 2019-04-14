@@ -97,7 +97,7 @@ $(window).on('load', function() {
     }
     
     for (var k in points) {
-     var pointLayerNameFromSpreadsheet = points[k].conflict_with_community;
+     var pointLayerNameFromSpreadsheet = points[k].Conflicts;
       if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
         markerColors.push(
           points[k]['Marker Icon'].indexOf('.') > 0
@@ -193,7 +193,7 @@ $(window).on('load', function() {
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
           marker.addTo(layers[point.Women]);
-          marker.addTo(layers[point.conflict_with_community]);
+          marker.addTo(layers[point.Conflicts]);
           
         }
 
